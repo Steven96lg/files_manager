@@ -1,10 +1,10 @@
 import os
 import shutil
 import utils as uls
+import methods as mth
 
 current_directory = os.getcwd()
 files_list = os.listdir(current_directory)
-
 
 print("============ Lista de Archivos ==============")
 # Imprime todos los archivos dentro del directorio actual
@@ -12,12 +12,18 @@ for file in files_list:
     file_path = os.path.join(current_directory, file)
     print(file, " ", os.path.getsize(file_path))
 
-
+print(uls.options_descriptions)
 option_selected = input("option>> ")
 
 while not option_selected in uls.options_menu:
-    print("la opcion no esta en el menu")
+    option_selected = input("Seleccione un opcion valida>> ")
 
+if(mth.export_methods[option_selected]):
+    mth.export_methods[option_selected]["do"]()
+
+
+
+'''
 print("inciando el proceso")
 # Recorre los archivos dentro del directorio
 for file_name in files_list:
@@ -35,3 +41,4 @@ for file_name in files_list:
             # Mueve el archivo al directorio de destino
             shutil.move(file_path, os.path.join(current_directory, target_folder, file_name))
 
+'''

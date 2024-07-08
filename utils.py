@@ -13,7 +13,7 @@ files_dictionary = [
 options_menu = ["delete", "organize"]
 
 options_descriptions = '''
-Selecciona una de las siguientes opciones...
+Escriba una de las siguientes opciones...
 ================================================================================
 =  1.- delete: elimina todos los archivos del directorio.                      =
 =  2.- organize: organiza todos los archivos en carpetas de acuerdo a su tipo  =
