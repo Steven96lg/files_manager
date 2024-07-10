@@ -3,9 +3,19 @@ import os
 import shutil
 import utils as uls
 
-####
+####### Metodo para eliminar archivos
 def delete_method():
     print("metodo para eliminar")
+
+    files_to_list = os.getcwd()
+    files_to_remove = os.listdir(files_to_list)
+
+    for file_remove in files_to_remove:
+        if not file_remove.endswith(".py"):
+            try:
+                os.remove(file_remove)
+            except:
+                print("Este archivo no se puede eliminar.")
 
 ####### Metodo para organizar los archivos en carptas
 def organize_method():
@@ -27,6 +37,8 @@ def organize_method():
                 # Mueve el archivo al directorio de destino
                 shutil.move(file_path, os.path.join(files_to_list, target_folder, file_name))
 
+
+####### Metodo para listar los archivos 
 def show_all_files():
     print(uls.files_list_print)
     files_to_list = os.getcwd()
